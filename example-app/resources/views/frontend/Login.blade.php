@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <head>
     <meta charset="UTF-8">
-    <link type="text/css" rel="stylesheet" href="">
+    <link type="text/css" rel="stylesheet" href="{{url('assets/css/style.css')}}">
     <title>Login</title>
 </head>
 <body>
     <section class="area-login">
         <div class="login">
             <div>
-                <img src="img.png">
+                <img src="assets/img/img.png">
             </div>
 
             <form method="post">

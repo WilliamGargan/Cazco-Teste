@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="{{url('assets/css/style.css')}}">
     <title>Recuperação de Senha</title>
 </head>
 <body>
     <section class="area-senha">
         <div class="senha">
             <div>
-                <img src="img.png">
+                <img src="assets/img/img.png">
             </div>
 
             <form method="post">

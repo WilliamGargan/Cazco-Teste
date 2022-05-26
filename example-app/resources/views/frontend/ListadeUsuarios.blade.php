@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="css/style2.css">
+    <link rel="stylesheet" href="{{url('assets/css/style2.css')}}">
     <title>Lista de Usuários</title>
 </head>
 

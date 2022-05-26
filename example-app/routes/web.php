@@ -17,6 +17,26 @@ use Illuminate\Support\Facades\Route;
 //    return view('welcome');
 //});
 
-Route::get('/', function () {
+Route::get('/admin/login', function () {
     return view('frontend\login');
+});
+
+Route::get('/admin/create', function () {
+    return view('frontend\CriaçãoUsuarios');
+});
+
+Route::get('/admin/edit', function () {
+    return view('frontend\EditarUsuarios');
+});
+
+Route::get('/admin/forgot-password', function () {
+    return view('frontend\EsqueciMinhaSenha');
+});
+
+Route::get('/admin/password-recovery', function () {
+    return view('frontend\Recuperação');
+});
+
+Route::get('/admin/users', function () {
+    return view('frontend\ListadeUsuarios');
 });
