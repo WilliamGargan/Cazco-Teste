@@ -17,24 +17,24 @@
             <td>1</td>
             <td>Marcos</td>
             <td>marcos.gg@gmail.com</td>
-            <td><button><a href="">Relatórios</a></button><button><a href="TelaEditarUsuarios.html">Editar</a></button><button><a href="">Excluir</a></button></td>
+            <td><button><a href="">Relatórios</a></button><button><a href="/admin/edit">Editar</a></button><button><a href="">Excluir</a></button></td>
         </tr>
 
         <tr>
             <td>2</td>
             <td>Luana</td>
             <td>luana.lu@gmail.com</td>
-            <td><button><a href="">Relatórios</a></button><button><a href="TelaEditarUsuarios.html">Editar</a></button><button><a href="">Excluir</a></button></td>
+            <td><button><a href="">Relatórios</a></button><button><a href="/admin/edit">Editar</a></button><button><a href="">Excluir</a></button></td>
         </tr>
 
         <tr>
             <td>3</td>
             <td>Carlos</td>
             <td>carlos.caca@gmail.com</td>
-            <td><button><a href="">Relatórios</a></button><button><a href="TelaEditarUsuarios.html">Editar</a></button><button><a href="">Excluir</a></button></td>
+            <td><button><a href="">Relatórios</a></button><button><a href="/admin/edit">Editar</a></button><button><a href="">Excluir</a></button></td>
         </tr>
     </table>
 </body>
 
-    <p><button><a href="TelaCriaçãoUsuarios.html">Novo Usuário</a></button></p>
+    <p><button><a href="/admin/create">Novo Usuário</a></button></p>
 </html>

@@ -8,7 +8,7 @@
     <section class="area-senha">
         <div class="senha">
             <div>
-                <img src="assets/img/img.png">
+                <img src="{!! asset('assets/img/img.png') !!}">
             </div>
 
             <form method="post">

@@ -8,7 +8,7 @@
     <section class="area-email">
         <div class="email">
             <div>
-                <img src="assets/img/img.png">
+                <img src="{!! asset('assets/img/img.png') !!}">
             </div>
 
             <form method="post">

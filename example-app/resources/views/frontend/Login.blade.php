@@ -8,7 +8,7 @@
     <section class="area-login">
         <div class="login">
             <div>
-                <img src="assets/img/img.png">
+            <img src="{!! asset('assets/img/img.png') !!}">
             </div>
 
             <form method="post">
@@ -16,7 +16,7 @@
                 <input type="password" name="senha" placeholder="Senha">
                 <input type="submit" value="entrar">
             </form>
-            <p>Esqueci Minha Senha?<a href="EsqueciMinhaSenha.blade.php">Recuperar Senha</a></p>
+            <p>Esqueci Minha Senha?<a href="/user/forgot-password">Recuperar Senha</a></p>
         </div>
     </section>
 </body>

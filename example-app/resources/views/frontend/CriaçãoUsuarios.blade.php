@@ -9,7 +9,7 @@
     <section class="area-criar">
         <div class="criar">
             <div>
-                <img src="assets/img/img.png">
+                <img src="{!! asset('assets/img/img.png') !!}">
             </div>
 
             <form method="post">
@@ -25,7 +25,7 @@
     <script>
         function Can()
         {
-            location.href="TelaListadeUsuarios.html"
+            location.href="/admin/users"
         }
     </script>
 </body>

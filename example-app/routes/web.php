@@ -13,30 +13,50 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-//Route::get('/', function () {
-//    return view('welcome');
-//});
+// Rotas Admins
 
-Route::get('/admin/login', function () {
-    return view('frontend\login');
+Route::middleware([])->group(function (){
+
+    Route::prefix('admin')->group(function (){
+        Route::get('/login', function () {
+            return view('frontend\login');
+        });
+        
+        Route::get('/create', function () {
+            return view('frontend\CriaçãoUsuarios');
+        });
+        
+        Route::get('/edit', function () {
+            return view('frontend\EditarUsuarios');
+        });
+        
+        Route::get('/forgot-password', function () {
+            return view('frontend\EsqueciMinhaSenha');
+        });
+        
+        Route::get('/password-recovery', function () {
+            return view('frontend\Recuperação');
+        });
+        
+        Route::get('/users', function () {
+            return view('frontend\ListadeUsuarios');
+        });
+    });
+    
 });
 
-Route::get('/admin/create', function () {
-    return view('frontend\CriaçãoUsuarios');
-});
+// Rotas Usuarios
 
-Route::get('/admin/edit', function () {
-    return view('frontend\EditarUsuarios');
-});
-
-Route::get('/admin/forgot-password', function () {
-    return view('frontend\EsqueciMinhaSenha');
-});
-
-Route::get('/admin/password-recovery', function () {
-    return view('frontend\Recuperação');
-});
-
-Route::get('/admin/users', function () {
-    return view('frontend\ListadeUsuarios');
+Route::prefix('user')->group(function (){
+    Route::get('/login', function () {
+        return view('frontend\login');
+    })->name('login');
+    
+    Route::get('/forgot-password', function () {
+        return view('frontend\EsqueciMinhaSenha');
+    });
+    
+    Route::get('/password-recovery', function () {
+        return view('frontend\Recuperação');
+    });
 });

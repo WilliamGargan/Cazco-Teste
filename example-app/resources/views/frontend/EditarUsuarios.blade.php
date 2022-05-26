@@ -9,7 +9,7 @@
     <section class="area-editar">
         <div class="editar">
             <div>
-                <img src="assets/img/img.png">
+                <img src="{!! asset('assets/img/img.png') !!}">
             </div>
 
             <form method="post">
@@ -23,7 +23,7 @@
     <script>
         function Can()
         {
-            location.href="TelaListadeUsuarios.html"
+            location.href="/admin/users"
         }
     </script>
 </body>
