@@ -1,6 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UsuariosController;
+use App\Http\Controllers\AutenticacaoController;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,29 +21,18 @@ use Illuminate\Support\Facades\Route;
 Route::middleware([])->group(function (){
 
     Route::prefix('admin')->group(function (){
-        Route::get('/login', function () {
-            return view('frontend\login');
-        });
-        
-        Route::get('/create', function () {
-            return view('frontend\CriaçãoUsuarios');
-        });
-        
-        Route::get('/edit', function () {
-            return view('frontend\EditarUsuarios');
-        });
-        
-        Route::get('/forgot-password', function () {
-            return view('frontend\EsqueciMinhaSenha');
-        });
-        
-        Route::get('/password-recovery', function () {
-            return view('frontend\Recuperação');
-        });
-        
-        Route::get('/users', function () {
-            return view('frontend\ListadeUsuarios');
-        });
+
+       Route::get('create', [UsuariosController::class, 'create']);
+
+       Route::get('edit', [UsuariosController::class, 'edit']);
+
+       Route::get('users', [UsuariosController::class, 'users']);
+
+       Route::get('login', [AutenticacaoController::class, 'login']);
+
+       Route::get('forgotpassword', [AutenticacaoController::class, 'forgotpassword']);
+
+       Route::get('passwordrecovery', [AutenticacaoController::class, 'passwordrecovery']);
     });
     
 });
@@ -48,15 +40,10 @@ Route::middleware([])->group(function (){
 // Rotas Usuarios
 
 Route::prefix('user')->group(function (){
-    Route::get('/login', function () {
-        return view('frontend\login');
-    })->name('login');
-    
-    Route::get('/forgot-password', function () {
-        return view('frontend\EsqueciMinhaSenha');
-    });
-    
-    Route::get('/password-recovery', function () {
-        return view('frontend\Recuperação');
-    });
+
+    Route::get('login', [UserController::class, 'login']);
+
+    Route::get('forgotpassword', [UserController::class, 'forgotpassword']);
+
+    Route::get('passwordrecovery', [UserController::class, 'passwordrecovery']);
 });
