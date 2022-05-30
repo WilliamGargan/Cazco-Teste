@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\User;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -13,13 +13,13 @@ class UserController extends Controller
         return view('frontend.login');
     }
 
-    public function forgotpassword()
+    public function forgotPassword()
     {
-        return view('frontend.forgotpassword');
+        return view('frontend.forgot-password');
     }
 
-    public function passwordrecovery()
+    public function passwordRecovery()
     {
-        return view('frontend.passwordrecovery');
+        return view('frontend.password-recovery');
     }
 }

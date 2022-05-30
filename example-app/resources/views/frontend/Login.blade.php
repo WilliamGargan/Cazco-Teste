@@ -16,7 +16,7 @@
                 <input type="password" name="senha" placeholder="Senha">
                 <input type="submit" value="entrar">
             </form>
-            <p>Esqueci Minha Senha?<a href="/user/forgotpassword">Recuperar Senha</a></p>
+            <p>Esqueci Minha Senha?<a href="{{ Route ('userforgotPassword') }}">Recuperar Senha</a></p>
         </div>
     </section>
 </body>

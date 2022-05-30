@@ -1,25 +1,25 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Resources\Views\frontend;
 
-class UsuariosController extends Controller
+class UsersController extends Controller
 {
     public function create()
     {
-        return view('frontend.createusers');
+        return view('frontend.create-users');
     }
 
     public function edit()
     {
-        return view('frontend.editusers');
+        return view('frontend.edit-users');
     }
 
     public function users()
     {
-        return view('frontend.listusers');
+        return view('frontend.list-users');
     }
 }

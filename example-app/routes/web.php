@@ -1,9 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\UsuariosController;
-use App\Http\Controllers\AutenticacaoController;
-use App\Http\Controllers\UserController;
+use App\Http\Controllers\Admin\UsersController;
+use App\Http\Controllers\Admin\AuthenticationController;
+use App\Http\Controllers\User\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,17 +22,17 @@ Route::middleware([])->group(function (){
 
     Route::prefix('admin')->group(function (){
 
-       Route::get('create', [UsuariosController::class, 'create']);
+       Route::get('create', [UsersController::class, 'create']);
 
-       Route::get('edit', [UsuariosController::class, 'edit']);
+       Route::get('edit', [UsersController::class, 'edit']);
 
-       Route::get('users', [UsuariosController::class, 'users']);
+       Route::get('users', [UsersController::class, 'users']);
 
-       Route::get('login', [AutenticacaoController::class, 'login']);
+       Route::get('login', [AuthenticationController::class, 'login']);
 
-       Route::get('forgotpassword', [AutenticacaoController::class, 'forgotpassword']);
+       Route::get('forgot-password', [AuthenticationController::class, 'forgotPassword']);
 
-       Route::get('passwordrecovery', [AutenticacaoController::class, 'passwordrecovery']);
+       Route::get('password-recovery', [AuthenticationController::class, 'passwordRecovery']);
     });
     
 });
@@ -41,9 +41,9 @@ Route::middleware([])->group(function (){
 
 Route::prefix('user')->group(function (){
 
-    Route::get('login', [UserController::class, 'login']);
+    Route::get('login', [UserController::class, 'login'])->name('login');
 
-    Route::get('forgotpassword', [UserController::class, 'forgotpassword']);
+    Route::get('forgot-password', [UserController::class, 'forgotPassword'])->name('userforgotPassword');
 
-    Route::get('passwordrecovery', [UserController::class, 'passwordrecovery']);
+    Route::get('password-recovery', [UserController::class, 'passwordRecovery']);
 });
