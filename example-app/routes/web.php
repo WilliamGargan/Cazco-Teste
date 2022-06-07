@@ -28,6 +28,8 @@ Route::middleware([])->group(function (){
 
        Route::get('users', [UsersController::class, 'users']);
 
+       Route::get('reports', [UsersController::class, 'reports']);
+
        Route::get('login', [AuthenticationController::class, 'login']);
 
        Route::get('forgot-password', [AuthenticationController::class, 'forgotPassword']);

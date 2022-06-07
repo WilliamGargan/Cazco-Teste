@@ -22,4 +22,9 @@ class UsersController extends Controller
     {
         return view('frontend.list-users');
     }
+
+    public function reports()
+    {
+        return view('frontend.reports-users');
+    }
 }

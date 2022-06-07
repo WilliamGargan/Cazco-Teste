@@ -6,7 +6,8 @@
 </head>
 
 <body>
-    <table>
+    <section class="area-tabela">
+    <table class="tabela">
         <caption><b>Lista de Usuários</b></caption>
         <th>ID</th>
         <th>Nome</th>
@@ -17,23 +18,24 @@
             <td>1</td>
             <td>Marcos</td>
             <td>marcos.gg@gmail.com</td>
-            <td><button><a href="">Relatórios</a></button><button><a href="/admin/edit">Editar</a></button><button><a href="">Excluir</a></button></td>
+            <td><button><a href="/admin/reports">Reports</a></button><button><a href="/admin/edit">Editar</a></button><button><a href="">Excluir</a></button></td>
         </tr>
 
         <tr>
             <td>2</td>
             <td>Luana</td>
             <td>luana.lu@gmail.com</td>
-            <td><button><a href="">Relatórios</a></button><button><a href="/admin/edit">Editar</a></button><button><a href="">Excluir</a></button></td>
+            <td><button><a href="/admin/reports">Reports</a></button><button><a href="/admin/edit">Editar</a></button><button><a href="">Excluir</a></button></td>
         </tr>
 
         <tr>
             <td>3</td>
             <td>Carlos</td>
             <td>carlos.caca@gmail.com</td>
-            <td><button><a href="">Relatórios</a></button><button><a href="/admin/edit">Editar</a></button><button><a href="">Excluir</a></button></td>
+            <td><button><a href="/admin/reports">Reports</a></button><button><a href="/admin/edit">Editar</a></button><button><a href="">Excluir</a></button></td>
         </tr>
     </table>
+    </section>
 </body>
 
     <p><button><a href="/admin/create">Novo Usuário</a></button></p>
