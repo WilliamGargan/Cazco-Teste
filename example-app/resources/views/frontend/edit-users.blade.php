@@ -12,10 +12,13 @@
                 <img src="{!! asset('assets/img/img.png') !!}">
             </div>
 
-            <form method="post">
-                <input type="text" name="Nome" placeholder="Nome" autocomplete="off">
-                <input type="text" name="Email" placeholder="Email" autocomplete="off">
-                <input type="submit5" value="Salvar">
+            <form action="/admin/update/{{ $user->id }}" method="post">
+                {{ method_field('PUT') }}
+                {{ csrf_field() }}
+                <input type="hidden" name="_method" value="PUT">
+                <input type="text" name="name" placeholder="Nome" autocomplete="off" value="{{ $user->name }}">
+                <input type="text" name="email" placeholder="Email" autocomplete="off" value="{{ $user->email }}">
+                <input style="background-color: #608cfb;" type="submit" value="Salvar">
                 <input type="submit5" value="Cancelar" onclick="Can()">
             </form>
         </div>

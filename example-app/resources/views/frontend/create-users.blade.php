@@ -12,12 +12,13 @@
                 <img src="{!! asset('assets/img/img.png') !!}">
             </div>
 
-            <form method="post">
+            <form action="/admin/store" method="post">
+                <input name="_method" type="hidden" value="PUT">
                 <input type="text" name="Nome" placeholder="Nome" autocomplete="off">
                 <input type="text" name="Email" placeholder="Email" autocomplete="off">
                 <input type="password" name="senha" placeholder="Senha">
                 <input type="password" name="Confirmar Senha" placeholder="Confirmar Senha">
-                <input type="submit4" value="Salvar">
+                <input type="submit" value="Salvar" style="background-color: #608cfb;">
                 <input type="submit4" value="Cancelar" onclick="Can()">
             </form>
         </div>

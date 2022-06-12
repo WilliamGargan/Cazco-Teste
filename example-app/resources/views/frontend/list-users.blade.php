@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="{{url('assets/css/style2.css')}}">
@@ -13,30 +12,20 @@
         <th>Nome</th>
         <th>Email</th>
         <th colspan="3">Ações</th>
-
-        <tr>
-            <td>1</td>
-            <td>Marcos</td>
-            <td>marcos.gg@gmail.com</td>
-            <td><button><a href="/admin/reports">Reports</a></button><button><a href="/admin/edit">Editar</a></button><button><a href="">Excluir</a></button></td>
-        </tr>
-
-        <tr>
-            <td>2</td>
-            <td>Luana</td>
-            <td>luana.lu@gmail.com</td>
-            <td><button><a href="/admin/reports">Reports</a></button><button><a href="/admin/edit">Editar</a></button><button><a href="">Excluir</a></button></td>
-        </tr>
-
-        <tr>
-            <td>3</td>
-            <td>Carlos</td>
-            <td>carlos.caca@gmail.com</td>
-            <td><button><a href="/admin/reports">Reports</a></button><button><a href="/admin/edit">Editar</a></button><button><a href="">Excluir</a></button></td>
-        </tr>
+        @foreach($users as $user)
+            <tr>
+                <td>{{ $user->id }}</td>
+                <td>{{ $user->name }}</td>
+                <td>{{ $user->email }}</td>
+                <td>
+                    <button><a href="/admin/reports">Reports</a></button>
+                    <button><a href="/admin/edit/{{ $user->id }}">Editar</a></button>
+                    <button><a href="/admin/delete/{{ $user->id }}">Excluir</a></button>
+                </td>
+            </tr>
+        @endforeach
     </table>
-    </section>
+    </br>
+    <button><a href="/admin/create" class="bot">Novo Usuário</a></button>
+    </select>
 </body>
-
-    <p><button><a href="/admin/create">Novo Usuário</a></button></p>
-</html>

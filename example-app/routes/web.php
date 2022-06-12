@@ -24,7 +24,13 @@ Route::middleware([])->group(function (){
 
        Route::get('create', [UsersController::class, 'create']);
 
-       Route::get('edit', [UsersController::class, 'edit']);
+       Route::get('delete/{id}', [UsersController::class, 'destroy']);
+
+       Route::post('store', [UsersController::class, 'store']);
+
+       Route::get('edit/{id}', [UsersController::class, 'edit']);
+
+       Route::put('update/{id}', [UsersController::class, 'update']);
 
        Route::get('users', [UsersController::class, 'users']);
 
