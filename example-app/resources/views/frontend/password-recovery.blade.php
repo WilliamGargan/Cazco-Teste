@@ -14,7 +14,7 @@
             <form method="post">
                 <input type="password" name="Nova Senha" placeholder="Nova Senha">
                 <input type="password" name="Confirmar Nova Senha" placeholder="Confirmar Nova Senha">
-                <input type="submit3" value="Enviar">
+                <input type="submit" value="Enviar" style="background-color: #608cfb;">
             </form>
         </div>
     </section>

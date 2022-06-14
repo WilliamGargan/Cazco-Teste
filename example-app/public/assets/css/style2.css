@@ -12,9 +12,9 @@ a{
 }
 
 button{
-    background-color: #608cfb;
-    padding: 5px;
-    margin: 5px;
+  background-color: #608cfb;
+  padding: 5px;
+  margin: 5px;
 }
 
 th, td{
@@ -34,6 +34,7 @@ th, td{
     justify-content: center;
     align-items: center;
 }
+
 
 .tabela{
     border: 1px solid black;
@@ -66,3 +67,39 @@ th, td{
   ::-webkit-scrollbar-thumb:hover {
     background: #608cfb; 
   }
+
+  .area-relatorios{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+
+.relatorios{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #232531;
+    border-radius: 10px;
+    width: 355px;
+    height: 250px;
+    padding: 35px;
+}
+
+.relatorios input{
+    margin-top: 10px;
+    background-color: #8993be;
+    padding-left: 10px;
+    color: #c4cbe0;
+    border: none;
+    width: 300px;
+    height: 100px;
+    outline: none;
+    border-radius: 8px;
+}
+
+.bot{
+  text-align: left;
+}

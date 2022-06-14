@@ -18,14 +18,21 @@
                 <td>{{ $user->name }}</td>
                 <td>{{ $user->email }}</td>
                 <td>
-                    <button><a href="/admin/reports">Reports</a></button>
+                    <button><a href="/admin/reports/{{ $user->id }}">Reports</a></button>
                     <button><a href="/admin/edit/{{ $user->id }}">Editar</a></button>
-                    <button><a href="/admin/delete/{{ $user->id }}">Excluir</a></button>
+                    <form action="/admin/delete" method="post">
+                        <input type="hidden" name="_method" value="delete" />
+                        <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                        <input type="hidden" name="id" value="{{ $user->id }}">
+                        <button style="cursor:pointer;" class="btn btn-default" type="submit">Excluir</button>
+                    </form>
                 </td>
             </tr>
         @endforeach
+        <tr>
+            <td><button><a href="/admin/create" class="bot">Cadastro</a></button></td>
+        </tr>
     </table>
     </br>
-    <button><a href="/admin/create" class="bot">Novo Usuário</a></button>
     </select>
 </body>

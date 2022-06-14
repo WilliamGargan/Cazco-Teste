@@ -8,6 +8,11 @@ use Resources\Views\frontend;
 
 class AuthenticationController extends Controller
 {
+    public function __construct()
+    {
+       
+    }
+
     public function login()
     {
         return view('frontend.login');

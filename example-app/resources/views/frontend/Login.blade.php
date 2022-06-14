@@ -11,7 +11,7 @@
             <img src="{!! asset('assets/img/img.png') !!}">
             </div>
 
-            <form method="post">
+            <form method="get">
                 <input type="text" name="Email" placeholder="Email" autocomplete="off">
                 <input type="password" name="senha" placeholder="Senha">
                 <input type="submit" value="entrar">

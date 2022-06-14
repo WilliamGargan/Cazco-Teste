@@ -24,7 +24,7 @@ Route::middleware([])->group(function (){
 
        Route::get('create', [UsersController::class, 'create']);
 
-       Route::get('delete/{id}', [UsersController::class, 'destroy']);
+       Route::delete('delete', [UsersController::class, 'destroy']);
 
        Route::post('store', [UsersController::class, 'store']);
 
@@ -36,11 +36,14 @@ Route::middleware([])->group(function (){
 
        Route::get('reports', [UsersController::class, 'reports']);
 
+       Route::get('reports/{id}', [UsersController::class, 'show']);
+
        Route::get('login', [AuthenticationController::class, 'login']);
 
        Route::get('forgot-password', [AuthenticationController::class, 'forgotPassword']);
 
        Route::get('password-recovery', [AuthenticationController::class, 'passwordRecovery']);
+       
     });
     
 });
@@ -49,9 +52,19 @@ Route::middleware([])->group(function (){
 
 Route::prefix('user')->group(function (){
 
-    Route::get('login', [UserController::class, 'login'])->name('login');
+    Route::get('login', [UserController::class, 'login']);
 
     Route::get('forgot-password', [UserController::class, 'forgotPassword'])->name('userforgotPassword');
 
     Route::get('password-recovery', [UserController::class, 'passwordRecovery']);
+});
+
+Route::middleware([
+    'auth:sanctum',
+    config('jetstream.auth_session'),
+    'verified'
+])->group(function () {
+    Route::get('/dashboard', function () {
+        return view('dashboard');
+    })->name('dashboard');
 });

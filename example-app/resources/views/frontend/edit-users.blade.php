@@ -6,6 +6,11 @@
 </head>
 
 <body>
+    <ul>
+        @foreach ($errors->all() as $error)
+            <li>{{ $error }}</li>
+        @endforeach
+    </ul>
     <section class="area-editar">
         <div class="editar">
             <div>

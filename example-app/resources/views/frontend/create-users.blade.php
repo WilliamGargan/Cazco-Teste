@@ -5,7 +5,13 @@
     <title>Adicionar Usuários</title>
 </head>
 
-<body>
+<body>   
+    <ul>
+        @foreach ($errors->all() as $error)
+            <li>{{ $error }}</li>
+        @endforeach
+    </ul>
+
     <section class="area-criar">
         <div class="criar">
             <div>
@@ -13,11 +19,11 @@
             </div>
 
             <form action="/admin/store" method="post">
-                <input name="_method" type="hidden" value="PUT">
-                <input type="text" name="Nome" placeholder="Nome" autocomplete="off">
-                <input type="text" name="Email" placeholder="Email" autocomplete="off">
-                <input type="password" name="senha" placeholder="Senha">
-                <input type="password" name="Confirmar Senha" placeholder="Confirmar Senha">
+                {{ csrf_field() }}
+                <input type="text" name="name" id="name" placeholder="Nome" autocomplete="off" value="{{ old('name') }}">
+                <input type="text" name="email" id="email" placeholder="Email" autocomplete="off" value="{{ old('email') }}">
+                <input type="password" name="password" id="password" placeholder="Senha" value="{{ old('password') }}">
+                <input type="password" name="password_confirmation" id="password_confirmation" placeholder="Confirmar Senha" value="{{ old('password_confirmation') }}">
                 <input type="submit" value="Salvar" style="background-color: #608cfb;">
                 <input type="submit4" value="Cancelar" onclick="Can()">
             </form>

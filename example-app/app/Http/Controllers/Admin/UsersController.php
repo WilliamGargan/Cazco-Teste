@@ -4,29 +4,37 @@ namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\StoreRequest;
+use App\Http\Requests\UpdateRequest;
 use Resources\Views\frontend;
 use App\Models\User;
+use App\Models\Report;
+use Mail;
 
 class UsersController extends Controller
 {
-    public function store(Request $request)
+
+    public function create()
+    {
+        return view('frontend.create-users');
+    }
+
+    public function store(StoreRequest $request)
     {
         $user = array(
-            "name" => $request->input("Nome"),
-            "email" => $request->input("Email"),
-            "password" => $request->input("senha"),
+            "name" => $request->input("name"),
+            "email" => $request->input("email"),
+            "password" => $request->input("password"),
         );
 
         $newUser = User::create($user);
 
-        if ($newUser)
+        if ($newUser){
             $users = User::all();        
             return view('frontend.list-users', ['users' => $users]);
-    }
-
-    public function create(Request $request)
-    {
-        return view('frontend.create-users');
+        }
+    
+        return redirect()->back()->withInput($request->all());
     }
 
     public function edit($id)
@@ -35,7 +43,7 @@ class UsersController extends Controller
         return view('frontend.edit-users', ['user' =>  $user]);
     }
 
-    public function update(Request $request, $id)
+    public function update(UpdateRequest $request, $id)
     {
         $user = User::find($id)->update(["name" => $request->input("name"), "email" =>  $request->input("email")]);
         $users = User::all();        
@@ -48,15 +56,25 @@ class UsersController extends Controller
         return view('frontend.list-users', ['users' => $users]);
     }
 
+    public function destroy(Request $request)
+    {
+        $user = User::findOrFail($request->input("id"));
+        foreach($user->reports as $report){
+            $report->delete();
+        }        
+        $user->delete();
+        $users = User::all();        
+        return view('frontend.list-users', ['users' => $users])->with('msg', 'Usuário excluido com sucesso!');
+    }
+
     public function reports()
     {
         return view('frontend.reports-users');
     }
 
-    public function destroy($id)
+    public function show($id)
     {
-        User::findOrFail($id)->delete();
-        $users = User::all();        
-        return view('frontend.list-users', ['users' => $users])->with('msg', 'Usuário excluido com sucesso!');
+        $user = User::FindOrFail($id);
+        return view('frontend.reports-users', ['reports' => $user->reports]);
     }
 }

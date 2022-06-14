@@ -11,9 +11,9 @@
                 <img src="{!! asset('assets/img/img.png') !!}">
             </div>
 
-            <form method="post">
-                <input type="text" name="Email" placeholder="Email" autocomplete="off" style="width: 320px;">
-                <input type="submit2" value="enviar" style="width: 120px;">
+            <form method="get">
+                <input type="text" name="Email" placeholder="Email" autocomplete="off" style="width: 320px;" value="{{ old('email') }}">
+                <input type="submit" value="Enviar" style="background-color: #608cfb;">
             </form>
         </div>
     </section>
