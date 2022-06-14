@@ -12,8 +12,9 @@
             </div>
 
             <form method="get">
-                <input type="text" name="Email" placeholder="Email" autocomplete="off">
-                <input type="password" name="senha" placeholder="Senha">
+                {{ csrf_field() }}
+                <input type="text" name="Email" id="email" placeholder="Email" autocomplete="off" value="{{ old('email') }}">
+                <input type="password" name="senha" id="password" placeholder="Senha" value="{{ old('password') }}">
                 <input type="submit" value="entrar">
             </form>
             <p>Esqueci Minha Senha?<a href="{{ Route ('userforgotPassword') }}">Recuperar Senha</a></p>
